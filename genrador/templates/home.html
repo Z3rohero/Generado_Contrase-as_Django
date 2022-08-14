@@ -1,0 +1,34 @@
+{%extends 'layout.html' %}
+{%block content %}
+   <h1 style="text-align:center">Generador de contraseñas</h1>
+  <form class="container p-4"  action={% url 'password' %} method="get">
+    <div class="form-group col-md-2">
+    <label for="longitud"> Seleciona la longitud</label>
+    <select name="longitud" class="form-control"id="longitud">
+      <option value="8"> 8 caracteres </option>
+      <option value="7"> 7caracteres </option>
+      <option value="6"> 6 caracteres </option>
+      <option value="5"> 5 caracteres </option>
+    </select>
+    </div> 
+    <div class="form-check">
+      <label class="form-check-label" for="mayuscula">Con Mayuscula</label>
+      <input type="checkbox" class="form-check-input" name="mayuscula">
+      
+    </div>
+    <div class="form-check  ">
+      <label for="especial" class="form-check-label">Con caracter especial</label>
+      <input type="checkbox" class="form-check-input"   name="especial" id="especial">
+    </div>
+      
+    <div class="form-check ">
+      <label for="numeros" class="form-check-label">Con numeros </label>
+      <input type="checkbox" class="form-check-input"  name="numeros" id="numeros">
+    </div>
+  </br>
+    <button class="btn btn-primary">Genera contraseña</button>
+      
+      
+    
+  </form>
+{% endblock %}
